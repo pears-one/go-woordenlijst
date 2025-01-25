@@ -40,7 +40,7 @@ func main() {
     }
 
     for _, noun := range nouns {
-		article, _ := noun.Article()
+        article, _ := noun.Article()
         fmt.Printf("Word with article: %s %s\n", article, noun.Word())
     }
 }
