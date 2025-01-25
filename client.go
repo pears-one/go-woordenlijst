@@ -56,7 +56,6 @@ func fetchXML(params *SearchParameters) ([]byte, error) {
 
 	url := fmt.Sprintf("%s/%s?%s", host, path, params.ToQueryString())
 	resp, err := c.Get(url)
-	fmt.Println(url)
 	if err != nil {
 		return nil, fmt.Errorf("request to %s failed: %w", url, err)
 	}
@@ -65,6 +64,5 @@ func fetchXML(params *SearchParameters) ([]byte, error) {
 	if err != nil {
 		return nil, fmt.Errorf("error reading body: %w", err)
 	}
-	fmt.Println(string(body))
 	return body, nil
 }
